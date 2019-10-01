@@ -91,7 +91,7 @@ boatImg.addEventListener("dblclick", () => {
 
 //-------------------- START IMAGE ROTATE ANIMATION ---------------------//
 
-// create node list out of all info images
+//create node list out of all info images
 const infoImgs = document.querySelectorAll(".img-content img");
 
 //add event listener to make info pages rotate on mouseover
@@ -102,3 +102,44 @@ infoImgs.forEach(img => {
 });
 
 //-------------------- END IMAGE ROTATE ANIMATION ---------------------//
+
+
+
+
+// -------------------- START MAGNIFY ANIMATION ------------------------//
+
+//grab fun bus header paragraph
+const funBusHead = document.querySelector(".intro p");
+
+//add event listener to magnify text on drag
+funBusHead.addEventListener("drag", () => {
+    funBusHead.style.fontSize = "60px";
+});
+
+//--------------------- END MAGNIFY ANIMATION ------------------------//
+
+
+
+
+//--------------- START DISAPPEARING BUTTON ANIMATION -----------------//
+
+//grab fun in the sun button
+const funSunBtn = document.querySelector(".destination .btn");
+
+//grab fun in the sun container
+const funSunHead = document.querySelector(".destination");
+
+//create new message, hide it, and append it to fun in the sun
+const sike = document.createElement("h4");
+sike.textContent = "SIKE!";
+sike.style.display = "none";
+sike.style.fontSize = "30px";
+funSunHead.append(sike);
+
+//add event listener to make button dissapear on click and make message take it's place
+funSunBtn.addEventListener("click", () => {
+    funSunBtn.style.display = "none";
+    sike.style.display = "inline";
+});
+
+//--------------- END DISAPPEARING BUTTON ANIMATION -----------------//
