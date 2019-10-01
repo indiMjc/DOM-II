@@ -187,3 +187,22 @@ infoBtns[2].addEventListener("click", () => {
 });
 
 //-------------- END EXPANDING BUTTON ANIMATION ------------------//
+
+
+
+//-------------- DISAPPEARING PARAGRAPHS ON COPY ------------------//
+
+//create node list for all containers
+const allContainers = document.querySelectorAll("header, .container, .footer");
+
+//create node list for all text on page
+const allText = document.querySelectorAll("p");
+
+//event listener for any p tag
+allText.forEach(paragraph => (
+    paragraph.addEventListener("copy", () => {
+        paragraph.style.display = "none";
+    })
+))
+
+//------------- END DISAPPEARING PARAGRAPHS ON COPY ---------------//
