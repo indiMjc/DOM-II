@@ -77,11 +77,28 @@ busLogo.addEventListener("wheel", () => {
 //--------------- START IMAGE FLIP DOUBLE CLICK ANIMATION ---------------//
 
 //grab boat image
-const lowerImages = document.querySelector(".content-destination img");
+const boatImg = document.querySelector(".content-destination img");
 
 //add double click event listener to make image flip on double click
-lowerImages.addEventListener("dblclick", () => {
-    lowerImages.setAttribute("style", "transform: rotateY(360deg); transition: all 2s;");
+boatImg.addEventListener("dblclick", () => {
+    boatImg.setAttribute("style", "transform: rotateY(360deg); transition: all 2s;");
 });
 
-//--------------- END IMAGE FLIP DOUBLE CLICK ANIMATION ---------------//
+//---------------- END IMAGE FLIP DOUBLE CLICK ANIMATION ----------------//
+
+
+
+
+//-------------------- START IMAGE ROTATE ANIMATION ---------------------//
+
+// create node list out of all info images
+const infoImgs = document.querySelectorAll(".img-content img");
+
+//add event listener to make info pages rotate on mouseover
+infoImgs.forEach(img => {
+    img.addEventListener("mouseover", () => {
+        img.setAttribute("style", "transform: rotate(360deg); transition: all 2s");
+    });
+});
+
+//-------------------- END IMAGE ROTATE ANIMATION ---------------------//
