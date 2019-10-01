@@ -64,7 +64,7 @@ function lightMode () {
 // grab bus logo
 const busLogo = document.querySelector(".home img");
 
-// add event listener to make bus drive off page
+// add event listener to make bus drive off page on mouse wheel scroll
 busLogo.addEventListener("wheel", () => {
     busLogo.setAttribute("style", "transform: translateX(2000px); transition: all 2s;");
 });
@@ -74,3 +74,14 @@ busLogo.addEventListener("wheel", () => {
 
 
 
+//--------------- START IMAGE FLIP DOUBLE CLICK ANIMATION ---------------//
+
+//grab boat image
+const lowerImages = document.querySelector(".content-destination img");
+
+//add double click event listener to make image flip on double click
+lowerImages.addEventListener("dblclick", () => {
+    lowerImages.setAttribute("style", "transform: rotateY(360deg); transition: all 2s;");
+});
+
+//--------------- END IMAGE FLIP DOUBLE CLICK ANIMATION ---------------//
