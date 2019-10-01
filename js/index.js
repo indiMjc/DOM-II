@@ -91,14 +91,12 @@ boatImg.addEventListener("dblclick", () => {
 
 //-------------------- START IMAGE ROTATE ANIMATION ---------------------//
 
-//create node list out of all info images
-const infoImgs = document.querySelectorAll(".img-content img");
+//grab first info img
+const infoImg = document.querySelector(".img-content img");
 
-//add event listener to make info pages rotate on mouseover
-infoImgs.forEach(img => {
-    img.addEventListener("mouseover", () => {
-        img.setAttribute("style", "transform: rotate(360deg); transition: all 2s");
-    });
+//add even listener to rotate image on mouseover
+infoImg.addEventListener("mouseover", () => {
+    infoImg.setAttribute("style", "transform: rotate(360deg); transition: all 2s");
 });
 
 //-------------------- END IMAGE ROTATE ANIMATION ---------------------//
@@ -143,3 +141,49 @@ funSunBtn.addEventListener("click", () => {
 });
 
 //--------------- END DISAPPEARING BUTTON ANIMATION -----------------//
+
+
+
+
+//---------------- START IMAGE FLY AWAY ANIMATION --------------------//
+
+//make node list out of both info images
+const infoImgs = document.querySelectorAll(".content-section img");
+
+//add event listener on second image since first already has animation
+//image will fly away diagonally after mouse out
+infoImgs[1].addEventListener("mouseout", () => {
+    infoImgs[1].setAttribute("style", "transform: translate(-1000px, -2000px); transition: all 2s;");
+})
+
+//---------------- END IMAGE FLY AWAY ANIMATION --------------------//
+
+
+
+
+//---------------- START FADING BUTTON ANIMATION --------------------//
+
+//node list out of all info buttons
+const infoBtns = document.querySelectorAll(".btn");
+
+//add event listener to second button since first already has animation
+//button will fade off screen when clicked
+infoBtns[1].addEventListener("click", () => {
+    infoBtns[1].style.opacity = "0";
+    infoBtns[1].style.transition = "opacity .25s ease-in-out";
+})
+
+//---------------- END FADING BUTTON ANIMATION --------------------//
+
+
+
+
+//-------------- START EXPANDING BUTTON ANIMATION ------------------//
+
+//add event listener to last button in node list
+//button will expand everything else off the page
+infoBtns[2].addEventListener("click", () => {
+    infoBtns[2].setAttribute("style", "height: 100vh; width: 100vw; transform: translate(-1110px, -800px); transition: all 5s;");
+});
+
+//-------------- END EXPANDING BUTTON ANIMATION ------------------//
