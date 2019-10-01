@@ -1,7 +1,9 @@
 // DARK AND LIGHT MODE TOGGLE
+
+// create navBar variable to append buttons to
 const navBar = document.querySelector('nav');
 
-// create dark mode button and append to nav bar
+// create dark mode button, style it, and append to nav bar
 const darkBtn = document.createElement("button");
 darkBtn.textContent = "Dark Mode";
 darkBtn.id = "darkModeBtn";
@@ -9,17 +11,14 @@ navBar.append(darkBtn);
 darkBtn.style.backgroundColor = "white";
 darkBtn.style.border = "1px solid black";
 
-// create light mode button and append to nav bar
+// create light mode button, style it, and append to nav bar
 const lightModeBtn = document.createElement("button");
 lightModeBtn.textContent = "Light Mode";
 lightModeBtn.id = "lightModeBtn";
 navBar.append(lightModeBtn);
-lightModeBtn.style.display = "none";
-lightModeBtn.style.color = "yellow";
-lightModeBtn.style.backgroundColor = "black";
-lightModeBtn.style.border = "1px solid yellow";
+lightModeBtn.setAttribute("style", "display: none; color: yellow; background: black; border: 1px solid yellow;");
 
-// node list for tags and classes targeted but light mode and dark mode
+// node list for tags and classes targeted but light mode and dark mode, to be used in event listeners below
 let tags = document.querySelectorAll(".btn, a, h1, h4, p");
 
 // event listener for dark mode on click of button
@@ -49,3 +48,5 @@ function lightMode () {
   document.getElementById("darkModeBtn").style.display = "inline";
   document.getElementById("lightModeBtn").style.display = "none";
 };
+
+
