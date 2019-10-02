@@ -75,7 +75,7 @@ const busLogo = document.querySelector(".home img");
 
 // add event listener to make bus drive off page on mouse wheel scroll
 busLogo.addEventListener("wheel", () => {
-    busLogo.setAttribute("style", "transform: translateX(2000px); transition: all 2s;");
+    busLogo.setAttribute("style", "transform: translateX(2000px) rotate(-20deg); transition: all 2s;");
 });
 
 //-------------------- END WHEEL SCROLL ANIMATION ----------------------//
@@ -90,7 +90,7 @@ const boatImg = document.querySelector(".content-destination img");
 
 //add double click event listener to make image flip on double click
 boatImg.addEventListener("dblclick", () => {
-    boatImg.setAttribute("style", "transform: rotateY(360deg); transition: all 2s;");
+    boatImg.setAttribute("style", "transform: rotateY(360deg) rotate(360deg); transition: all 3s;");
 });
 
 //---------------- END IMAGE FLIP DOUBLE CLICK ANIMATION ----------------//
@@ -139,14 +139,13 @@ const funSunHead = document.querySelector(".destination");
 //create new message, hide it, and append it to fun in the sun
 const sike = document.createElement("h4");
 sike.textContent = "SIKE!";
-sike.style.display = "none";
-sike.style.fontSize = "30px";
+sike.setAttribute("style", "display: none; font-size: 60px; color: red; justify-content: center;");
 funSunHead.append(sike);
 
 //add event listener to make button dissapear on click and make message take it's place
 funSunBtn.addEventListener("click", () => {
     funSunBtn.style.display = "none";
-    sike.style.display = "inline";
+    sike.style.display = "flex";
     funSunBtn.style.backgroundColor = "black";
 });
 
@@ -163,7 +162,7 @@ const infoImgs = document.querySelectorAll(".content-section img");
 //add event listener on second image since first already has animation
 //image will fly away diagonally after mouse out
 infoImgs[1].addEventListener("mouseout", () => {
-    infoImgs[1].setAttribute("style", "transform: translate(-1000px, -2000px); transition: all 2s;");
+    infoImgs[1].setAttribute("style", "transform: translate(-1000px, -2000px) rotate(1800deg); transition: all 5s;");
 })
 
 //---------------- END IMAGE FLY AWAY ANIMATION --------------------//
@@ -188,15 +187,16 @@ infoBtns[1].addEventListener("click", () => {
 
 
 
-//-------------- START EXPANDING BUTTON ANIMATION ------------------//
+//------------- START BLUE SCREEN BUTTON ANIMATION ----------------//
 
 //add event listener to last button in node list
 //button will expand everything else off the page
 infoBtns[2].addEventListener("click", () => {
-    infoBtns[2].setAttribute("style", "height: 100vh; width: 100vw; transform: translate(-1110px, -800px); transition: all 5s;");
+    infoBtns[2].setAttribute("style", "height: 100vh; width: 100vw; background: blue; transform: translate(-1115px, -800px);");
+    infoBtns[2].textContent = "";
 });
 
-//-------------- END EXPANDING BUTTON ANIMATION ------------------//
+//------------- END BLUE SCREEN BUTTON ANIMATION ------------------//
 
 
 
