@@ -26,7 +26,7 @@ const bodyTag = document.getElementsByTagName("body");
 
 // event listener for dark mode on click of Mode
 darkModeBtn.addEventListener("click", darkMode);
-function darkMode () {
+function darkMode (click) {
   // change backgrounds to black
   bodyTag[0].style.backgroundColor = 'black';
   document.getElementsByTagName("header")[0].style.backgroundColor = 'black';
@@ -37,11 +37,12 @@ function darkMode () {
   // hide dark mode button and show light mode button
   document.getElementById("darkModeBtn").style.display = "none";
   document.getElementById("lightModeBtn").style.display = "inline";
+  click.stopPropagation();
 };
 
 // event listener for light mode on click of lightModeBtn
 lightModeBtn.addEventListener("click", lightMode);
-function lightMode () {
+function lightMode (click) {
   // change backgrounds to white
   document.getElementsByTagName("body")[0].style.backgroundColor = 'white';
   document.getElementsByTagName("header")[0].style.backgroundColor = 'white';
@@ -52,11 +53,19 @@ function lightMode () {
   // hide light mode button and show dark mode button
   document.getElementById("darkModeBtn").style.display = "inline";
   document.getElementById("lightModeBtn").style.display = "none";
+  click.stopPropagation();
 };
 
 //---------------- END DARK AND LIGHT MODE TOGGLE SECTION ----------------//
 
 
+
+//----------------- CLICK NAV BAR TO MAKE IT YELLOW ----------------------//
+
+// add even listener to navBar variable to change bg color
+navBar.addEventListener("click", () => {
+    navBar.style.backgroundColor = "yellow";
+})
 
 
 //-------------------- START WHEEL SCROLL ANIMATION ----------------------//
@@ -138,6 +147,7 @@ funSunHead.append(sike);
 funSunBtn.addEventListener("click", () => {
     funSunBtn.style.display = "none";
     sike.style.display = "inline";
+    funSunBtn.style.backgroundColor = "black";
 });
 
 //--------------- END DISAPPEARING BUTTON ANIMATION -----------------//
