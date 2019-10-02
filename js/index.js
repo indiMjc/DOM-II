@@ -111,8 +111,12 @@ const infoImg = document.querySelector(".img-content img");
 
 //add even listener to rotate image on mouseover
 infoImg.addEventListener("mouseover", () => {
-    infoImg.setAttribute("style", "transform: rotate(360deg); transition: all 2s");
+    infoImg.setAttribute("style", "transform: rotateY(2160deg) translateY(-2000px); transition: all 5s");
 });
+
+// infoImg.addEventListener("click", () => {
+//     infoImg.setAttribute("style", "transform: rotate(1080deg) translateY(-1000px); transition: all 2s");
+// });
 
 //-------------------- END IMAGE ROTATE ANIMATION ---------------------//
 
@@ -184,8 +188,9 @@ const infoBtns = document.querySelectorAll(".btn");
 //add event listener to second button since first already has animation
 //button will fade off screen when clicked
 infoBtns[1].addEventListener("click", () => {
-    infoBtns[1].style.opacity = "0";
-    infoBtns[1].style.transition = "opacity 1s ease-in-out";
+    infoBtns[1].setAttribute("style", "opacity: 0; transform: rotateY(720deg); transition: all 1.5s;");
+    // infoBtns[1].style.opacity = "0";
+    // infoBtns[1].style.transition = "opacity 1s ease-in-out";
 })
 
 //---------------- END FADING BUTTON ANIMATION --------------------//
