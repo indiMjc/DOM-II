@@ -180,7 +180,7 @@ const infoBtns = document.querySelectorAll(".btn");
 //button will fade off screen when clicked
 infoBtns[1].addEventListener("click", () => {
     infoBtns[1].style.opacity = "0";
-    infoBtns[1].style.transition = "opacity .25s ease-in-out";
+    infoBtns[1].style.transition = "opacity 1s ease-in-out";
 })
 
 //---------------- END FADING BUTTON ANIMATION --------------------//
@@ -229,4 +229,6 @@ anchorTags.forEach(aTag => (
         click.preventDefault();
         click.stopPropagation();
     })
-))
+));
+
+//---------------------- DEFAULTS DISABLED -----------------------//
