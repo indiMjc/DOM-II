@@ -72,10 +72,16 @@ navBar.addEventListener("click", () => {
 
 // grab bus logo
 const busLogo = document.querySelector(".home img");
+// position relative for GSAP
+busLogo.style.position = "relative";
 
 // add event listener to make bus drive off page on mouse wheel scroll
 busLogo.addEventListener("wheel", () => {
     busLogo.setAttribute("style", "transform: translateX(2000px) rotate(-20deg); transition: all 2s;");
+});
+
+busLogo.addEventListener("click", () => {
+    TweenMax.to(busLogo, 1, {left:-100});
 });
 
 //-------------------- END WHEEL SCROLL ANIMATION ----------------------//
