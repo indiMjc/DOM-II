@@ -216,3 +216,17 @@ allText.forEach(paragraph => (
 ))
 
 //------------- END DISAPPEARING PARAGRAPHS ON COPY ---------------//
+
+
+
+//----------- DISABLE DEFAULT ACTION FOR ANCHORS IN NAV -----------//
+
+//grab the anchor tags in nav
+const anchorTags = document.querySelectorAll(".nav a");
+
+anchorTags.forEach(aTag => (
+    aTag.addEventListener("click", (click) => {
+        click.preventDefault();
+        click.stopPropagation();
+    })
+))
